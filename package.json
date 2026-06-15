@@ -1,0 +1,64 @@
+{
+  "name": "rekha",
+  "version": "0.1.0",
+  "description": "Self-hosted PM2 monitoring, analytics, and control platform with RBAC.",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/rekha.git"
+  },
+  "homepage": "https://github.com/your-org/rekha#readme",
+  "bugs": "https://github.com/your-org/rekha/issues",
+  "bin": {
+    "rekha": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm --filter ./packages/shared build && pnpm --filter ./packages/server build && pnpm --filter ./packages/cli build && pnpm --filter ./packages/web build",
+    "build:server": "pnpm --filter ./packages/shared build && pnpm --filter ./packages/server build",
+    "bundle": "node scripts/bundle.mjs",
+    "dist": "pnpm build && pnpm bundle",
+    "prepublishOnly": "pnpm dist",
+    "typecheck": "pnpm -r typecheck",
+    "dev:server": "pnpm --filter ./packages/server dev",
+    "dev:web": "pnpm --filter ./packages/web dev",
+    "lint": "pnpm -r lint"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "@fastify/cookie": "^9.3.1",
+    "@fastify/csrf-protection": "^6.4.1",
+    "@fastify/helmet": "^11.1.1",
+    "@fastify/rate-limit": "^9.1.0",
+    "@fastify/static": "^7.0.4",
+    "@fastify/websocket": "^10.0.1",
+    "argon2": "^0.40.3",
+    "better-sqlite3": "^11.1.2",
+    "commander": "^12.1.0",
+    "fastify": "^4.28.1",
+    "picocolors": "^1.0.1",
+    "pino": "^9.3.2",
+    "pm2": "^5.4.2",
+    "ws": "^8.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0"
+  },
+  "keywords": [
+    "pm2",
+    "monitoring",
+    "dashboard",
+    "process-manager",
+    "observability",
+    "rbac",
+    "self-hosted"
+  ],
+  "packageManager": "pnpm@9.0.0"
+}

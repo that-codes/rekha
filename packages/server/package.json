@@ -1,0 +1,39 @@
+{
+  "name": "@rekha/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/main.js",
+  "exports": {
+    ".": "./dist/main.js",
+    "./paths": "./dist/paths.js",
+    "./*": "./dist/*.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dev": "node --watch --loader ts-node/esm src/main.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^9.3.1",
+    "@fastify/csrf-protection": "^6.4.1",
+    "@fastify/helmet": "^11.1.1",
+    "@fastify/rate-limit": "^9.1.0",
+    "@fastify/static": "^7.0.4",
+    "@fastify/websocket": "^10.0.1",
+    "@rekha/shared": "workspace:*",
+    "argon2": "^0.40.3",
+    "better-sqlite3": "^11.1.2",
+    "fastify": "^4.28.1",
+    "pino": "^9.3.2",
+    "pm2": "^5.4.2",
+    "ws": "^8.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^20.14.12",
+    "@types/ws": "^8.5.12",
+    "typescript": "^5.5.4"
+  }
+}

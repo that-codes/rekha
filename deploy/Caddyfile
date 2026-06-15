@@ -1,0 +1,12 @@
+# Rekha reverse-proxy example (Caddy). Caddy auto-provisions TLS and adds HSTS.
+# WebSocket upgrades are proxied automatically. Set config.trustedProxies to
+# 127.0.0.1 (or the Caddy host IP) in ~/.rekha/config.json.
+
+pm2.example.com {
+	encode gzip
+	reverse_proxy 127.0.0.1:9700 {
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+		header_up X-Forwarded-Host {host}
+	}
+}
