@@ -6,10 +6,10 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/rekha.git"
+    "url": "git+https://github.com/that-codes/rekha.git"
   },
-  "homepage": "https://github.com/your-org/rekha#readme",
-  "bugs": "https://github.com/your-org/rekha/issues",
+  "homepage": "https://github.com/that-codes/rekha#readme",
+  "bugs": "https://github.com/that-codes/rekha/issues",
   "bin": {
     "rekha": "dist/cli.js"
   },
